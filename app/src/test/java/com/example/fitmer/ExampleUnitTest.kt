@@ -1,4 +1,4 @@
-package com.example.fitimer
+package com.example.fitmer
 
 import org.junit.Test
 

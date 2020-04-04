@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <color name="colorPrimary">#54123b</color>
+    <color name="colorPrimaryDark">#310420</color>
+    <color name="colorSurface">#54123b</color>
+    <color name="colorOnSurface">#BABABA</color>
+    <color name="colorBar">#310420</color>
+    <color name="colorOnBar">#ffffff</color>
+    <color name="colorGray">#4E545F</color>
+</resources>

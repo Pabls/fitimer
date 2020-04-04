@@ -1,4 +1,4 @@
-package com.example.fitimer
+package com.example.fitmer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ar4i.fitimer", appContext.packageName)
+        assertEquals("com.ar4i.fitmer", appContext.packageName)
     }
 }

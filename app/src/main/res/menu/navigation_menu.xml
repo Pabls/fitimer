@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/actionToMyWorkout"
+        android:title="@string/nav_menu.home.my_workouts"
+        android:icon="@drawable/ic_dumbbell"/>
+
+    <item android:id="@+id/actionToGraph"
+        android:title="@string/nav_menu.menu.graphs"
+        android:icon="@drawable/ic_pulse"/>
+
+    <item android:id="@+id/actionToTimer"
+        android:title="@string/nav_menu.timer"
+        android:icon="@drawable/ic_chronometer"/>
+</menu>
