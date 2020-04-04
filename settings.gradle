@@ -1,0 +1,2 @@
+rootProject.name='Fitimer'
+include ':app'
