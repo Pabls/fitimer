@@ -8,6 +8,6 @@
     <color name="colorAccentDark">#DA6106</color>
     <color name="colorError">#84142d</color>
     <color name="colorBar">#FFFFFF</color>
-    <color name="colorOnBar">#87898B</color>
+    <color name="colorOnBar">#808080</color>
     <color name="colorGray">#9ca9ba</color>
 </resources>

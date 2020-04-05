@@ -7,7 +7,10 @@ import com.ar4i.fitmer.app.di.modeules.AppModule
 import com.ar4i.fitmer.app.di.modeules.InteractorsModule
 import com.ar4i.fitmer.presentation.base.EmptyViewModel
 import com.ar4i.fitmer.presentation.graphs.GraphsViewModel
+import com.ar4i.fitmer.presentation.settings.SettingsViewModel
 import com.ar4i.fitmer.presentation.timer.TimerViewModel
+import com.ar4i.fitmer.presentation.timer.intervals.IntervalsViewModel
+import com.ar4i.fitmer.presentation.timer.tabata.TabataViewModel
 import com.ar4i.fitmer.presentation.workouts.WorkoutsViewModel
 
 object ViewModelsFactory : ViewModelProvider.Factory {
@@ -25,6 +28,9 @@ object ViewModelsFactory : ViewModelProvider.Factory {
             WorkoutsViewModel::class.java -> WorkoutsViewModel(app)
             GraphsViewModel::class.java -> GraphsViewModel(app)
             TimerViewModel::class.java -> TimerViewModel(app)
+            SettingsViewModel::class.java -> SettingsViewModel(app)
+            TabataViewModel::class.java -> TabataViewModel(app)
+            IntervalsViewModel::class.java -> IntervalsViewModel(app)
             else -> EmptyViewModel(app)
         } as T
     }

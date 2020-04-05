@@ -5,8 +5,15 @@
     <string name="nav_menu.home.my_workouts">My workouts</string>
     <string name="nav_menu.menu.graphs">Graphs</string>
     <string name="nav_menu.timer">Timer</string>
+    <string name="nav_menu.settings">Settings</string>
 
     <string name="workouts_title">My workouts</string>
+
     <string name="graphs_title">Graphs</string>
+
     <string name="timer_title">Timer</string>
+    <string name="timer_tab.intervals">Intervals</string>
+    <string name="timer_tab.tabata">Tabata</string>
+
+    <string name="settings_title">Settings</string>
 </resources>

@@ -9,10 +9,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.ar4i.fitmer.R
 import com.ar4i.fitmer.presentation.graphs.GraphFragment
+import com.ar4i.fitmer.presentation.settings.SettingsFragment
 import com.ar4i.fitmer.presentation.timer.TimerFragment
 import com.ar4i.fitmer.presentation.workouts.WorkoutsFragment
+import com.ar4i.fitmer.utils.dpToPixSize
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -50,6 +53,21 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(showBackButton)
     }
 
+    fun navigateTo(fragment: Fragment?, addToBackStack: Boolean = false) {
+        fragment?.let {
+            commitTransaction(
+                when (addToBackStack) {
+                    true -> getFragmentManagerTransaction().addToBackStack(null)
+                    false -> getFragmentManagerTransaction()
+                }, it
+            )
+        }
+    }
+
+    fun showToolbarShadow(show: Boolean) {
+        supportActionBar?.elevation = applicationContext.dpToPixSize(if (show) 4f else 0f).toFloat()
+    }
+
     private fun initView() {
         toolbar = findViewById(R.id.toolbar)
         tvTitle = findViewById(R.id.tvTitle)
@@ -63,20 +81,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.actionToMyWorkout -> setFragmentFromWithLeftAnimation(WorkoutsFragment.newInstance())
                 R.id.actionToGraph -> setFragmentFromWithLeftAnimation(GraphFragment.newInstance())
                 R.id.actionToTimer -> setFragmentFromWithLeftAnimation(TimerFragment.newInstance())
+                R.id.actionToSettings -> setFragmentFromWithLeftAnimation(SettingsFragment.newInstance())
             }
             true
         }
     }
 
     private fun setFragmentFromWithLeftAnimation(fragment: Fragment?) {
-        if (fragment != null) {
-            supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left)
-                .replace(R.id.flContainer, fragment)
-                .commit()
-        }
+        fragment?.let { commitTransaction(getFragmentManagerTransaction(), it) }
     }
+
+    private fun getFragmentManagerTransaction() = supportFragmentManager
+        .beginTransaction()
+
+    private fun commitTransaction(transaction: FragmentTransaction, fragment: Fragment) =
+        transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left)
+            .replace(R.id.flContainer, fragment)
+            .commit()
 
     private fun setDarkMode(isDark: Boolean) {
         val isCurrentModeDark = delegate.localNightMode == AppCompatDelegate.MODE_NIGHT_YES
