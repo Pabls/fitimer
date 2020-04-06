@@ -13,9 +13,11 @@ import androidx.fragment.app.FragmentTransaction
 import com.ar4i.fitmer.R
 import com.ar4i.fitmer.presentation.graphs.GraphFragment
 import com.ar4i.fitmer.presentation.settings.SettingsFragment
+import com.ar4i.fitmer.presentation.splash.SplashFragment
 import com.ar4i.fitmer.presentation.timer.TimerFragment
 import com.ar4i.fitmer.presentation.workouts.WorkoutsFragment
 import com.ar4i.fitmer.utils.dpToPixSize
+import com.ar4i.fitmer.utils.showOrGone
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -29,9 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
-        setDarkMode(isDark = true)
+        setDarkMode(isDark = false)
         if (savedInstanceState == null) {
-            setFragmentFromWithLeftAnimation(WorkoutsFragment.newInstance())
+            setFragmentWithLeftAnimation(SplashFragment.newInstance())
         }
     }
 
@@ -68,6 +70,14 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.elevation = applicationContext.dpToPixSize(if (show) 4f else 0f).toFloat()
     }
 
+    fun showToolbar(show: Boolean) {
+        toolbar?.showOrGone(show)
+    }
+
+    fun showBottomBar(show: Boolean) {
+        navMenu?.showOrGone(show)
+    }
+
     private fun initView() {
         toolbar = findViewById(R.id.toolbar)
         tvTitle = findViewById(R.id.tvTitle)
@@ -78,16 +88,16 @@ class MainActivity : AppCompatActivity() {
 
         navMenu?.setOnNavigationItemSelectedListener { it ->
             when (it.itemId) {
-                R.id.actionToMyWorkout -> setFragmentFromWithLeftAnimation(WorkoutsFragment.newInstance())
-                R.id.actionToGraph -> setFragmentFromWithLeftAnimation(GraphFragment.newInstance())
-                R.id.actionToTimer -> setFragmentFromWithLeftAnimation(TimerFragment.newInstance())
-                R.id.actionToSettings -> setFragmentFromWithLeftAnimation(SettingsFragment.newInstance())
+                R.id.actionToMyWorkout -> setFragmentWithLeftAnimation(WorkoutsFragment.newInstance())
+                R.id.actionToGraph -> setFragmentWithLeftAnimation(GraphFragment.newInstance())
+                R.id.actionToTimer -> setFragmentWithLeftAnimation(TimerFragment.newInstance())
+                R.id.actionToSettings -> setFragmentWithLeftAnimation(SettingsFragment.newInstance())
             }
             true
         }
     }
 
-    private fun setFragmentFromWithLeftAnimation(fragment: Fragment?) {
+    private fun setFragmentWithLeftAnimation(fragment: Fragment?) {
         fragment?.let { commitTransaction(getFragmentManagerTransaction(), it) }
     }
 

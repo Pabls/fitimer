@@ -32,7 +32,11 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
     ): View? = inflater.inflate(layoutId, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        getMainActivity()?.showToolbarShadow(show = showToolbarShadow())
+        getMainActivity()?.let{
+            it.showToolbarShadow(show = showToolbarShadow())
+            it.showToolbar(show = showToolbar())
+            it.showBottomBar(show = showBottomBar())
+        }
         setTitle()
         initObservers()
         super.onViewCreated(view, savedInstanceState)
@@ -40,6 +44,8 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
 
     protected open fun showBackButton() = false
     protected open fun showToolbarShadow() = true
+    protected open fun showToolbar() = true
+    protected open fun showBottomBar() = true
 
     protected fun navigateTo(fragment: Fragment, addToBackStack: Boolean = false) {
         getMainActivity()?.let {

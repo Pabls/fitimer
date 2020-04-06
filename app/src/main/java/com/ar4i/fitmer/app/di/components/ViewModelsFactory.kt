@@ -8,6 +8,7 @@ import com.ar4i.fitmer.app.di.modeules.InteractorsModule
 import com.ar4i.fitmer.presentation.base.EmptyViewModel
 import com.ar4i.fitmer.presentation.graphs.GraphsViewModel
 import com.ar4i.fitmer.presentation.settings.SettingsViewModel
+import com.ar4i.fitmer.presentation.splash.SplashViewModel
 import com.ar4i.fitmer.presentation.timer.TimerViewModel
 import com.ar4i.fitmer.presentation.timer.intervals.IntervalsViewModel
 import com.ar4i.fitmer.presentation.timer.tabata.TabataViewModel
@@ -25,6 +26,7 @@ object ViewModelsFactory : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when (modelClass) {
+            SplashViewModel::class.java -> SplashViewModel(app)
             WorkoutsViewModel::class.java -> WorkoutsViewModel(app)
             GraphsViewModel::class.java -> GraphsViewModel(app)
             TimerViewModel::class.java -> TimerViewModel(app)
