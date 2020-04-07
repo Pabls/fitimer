@@ -23,31 +23,33 @@ class IndicatorView(context: Context, attributeSet: AttributeSet?) :
         imgEnd = findViewById(R.id.imgEnd)
     }
 
-    fun setActive(index: Int) {
-        val colors = when (index) {
-            0 -> Triple(
-                R.drawable.background_circle_accent,
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_gray
-            )
-            1 -> Triple(
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_accent,
-                R.drawable.background_circle_gray
-            )
-            2 -> Triple(
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_accent
-            )
-            else -> Triple(
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_gray,
-                R.drawable.background_circle_gray
-            )
-        }
+    fun setActive(index: Int?) {
+        if(index != null){
+            val colors = when (index) {
+                0 -> Triple(
+                    R.drawable.background_circle_accent,
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_gray
+                )
+                1 -> Triple(
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_accent,
+                    R.drawable.background_circle_gray
+                )
+                2 -> Triple(
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_accent
+                )
+                else -> Triple(
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_gray,
+                    R.drawable.background_circle_gray
+                )
+            }
 
-        setColors(colors.first, colors.second, colors.third)
+            setColors(colors.first, colors.second, colors.third)
+        }
     }
 
     private fun setColors(@DrawableRes startRes: Int, midRes: Int, endRes: Int) {

@@ -6,50 +6,51 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/tvFirst"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Combine exercises"
-        android:textSize="32sp"
+        android:text="@string/third_splash_first_advice"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvSecond"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Exercise regularly"
-        android:textSize="32sp"
+        android:text="@string/third_splash_second_advice"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFirst" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvThird"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="And enjoy the result"
-        android:textSize="32sp"
+        android:text="@string/third_splash_third_advice"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSecond" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgLogo"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="32dp"
@@ -57,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvThird" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     >
 
     <solid
-        android:color="@color/colorGray"/>
+        android:color="@color/colorOnBar"/>
 
     <corners
         android:radius="24dp"/>

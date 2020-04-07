@@ -1,19 +1,36 @@
 <resources>
     <string name="app_name">Fitmer</string>
-    <string name="common.empty"></string>
+    <string name="common_empty"></string>
 
-    <string name="nav_menu.home.my_workouts">My workouts</string>
-    <string name="nav_menu.menu.graphs">Graphs</string>
-    <string name="nav_menu.timer">Timer</string>
-    <string name="nav_menu.settings">Settings</string>
+    <string name="nav_menu_home_my_workouts">My workouts</string>
+    <string name="nav_menu_menu_graphs">Graphs</string>
+    <string name="nav_menu_timer">Timer</string>
+    <string name="nav_menu_settings">Settings</string>
 
     <string name="workouts_title">My workouts</string>
 
     <string name="graphs_title">Graphs</string>
 
     <string name="timer_title">Timer</string>
-    <string name="timer_tab.intervals">Intervals</string>
-    <string name="timer_tab.tabata">Tabata</string>
+    <string name="timer_tab_intervals">Intervals</string>
+    <string name="timer_tab_tabata">Tabata</string>
 
     <string name="settings_title">Settings</string>
+
+    <string name="splash_ok">Ok</string>
+    <string name="splash_finish">Finish</string>
+
+    <string name="first_splash_welcome_message">Hello and welcome!</string>
+    <string name="first_splash_title">What is Tabata?</string>
+    <string name="first_splash_text">Tabata training is a high-intensity interval training (HIIT) workout, 
+        featuring exercises that last four minutes</string>
+    
+    <string name="second_splash_title">The structure of\n the program is as follows:</string>
+    <string name="second_splash_first_step">Work out hard for 20 seconds</string>
+    <string name="second_splash_second_step">Rest for 10 seconds</string>
+    <string name="second_splash_third_step">Complete 8 rounds</string>
+    
+    <string name="third_splash_first_advice">Combine exercises</string>
+    <string name="third_splash_second_advice">Exercise regularly</string>
+    <string name="third_splash_third_advice">And enjoy the result</string>
 </resources>

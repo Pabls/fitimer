@@ -32,7 +32,7 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
     ): View? = inflater.inflate(layoutId, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        getMainActivity()?.let{
+        getMainActivity()?.let {
             it.showToolbarShadow(show = showToolbarShadow())
             it.showToolbar(show = showToolbar())
             it.showBottomBar(show = showBottomBar())
@@ -54,9 +54,9 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
     }
 
     protected inline fun <T> LiveData<Event<T>>.observeEvent(crossinline observer: (T?) -> Unit) =
-        this.observe(
-            viewLifecycleOwner,
-            Observer { t -> t.getContentIfNotHandled()?.apply { observer.invoke(this) } })
+        this.observe(viewLifecycleOwner, Observer { t ->
+            t.getContentIfNotHandled()?.apply { observer.invoke(this) }
+        })
 
     abstract fun initObservers()
 

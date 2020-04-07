@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/actionToMyWorkout"
-        android:title="@string/nav_menu.home.my_workouts"
+        android:title="@string/nav_menu_home_my_workouts"
         android:icon="@drawable/ic_dumbbell"/>
 
     <item android:id="@+id/actionToGraph"
-        android:title="@string/nav_menu.menu.graphs"
+        android:title="@string/nav_menu_menu_graphs"
         android:icon="@drawable/ic_show_chart"/>
 
     <item android:id="@+id/actionToTimer"
-        android:title="@string/nav_menu.timer"
+        android:title="@string/nav_menu_timer"
         android:icon="@drawable/ic_chronometer"/>
 
     <item android:id="@+id/actionToSettings"
-        android:title="@string/nav_menu.settings"
+        android:title="@string/nav_menu_settings"
         android:icon="@drawable/ic_settings"/>
 </menu>

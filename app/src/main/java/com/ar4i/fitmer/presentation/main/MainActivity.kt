@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
-        setDarkMode(isDark = false)
+        setDarkMode(isDark = true)
         if (savedInstanceState == null) {
             setFragmentWithLeftAnimation(SplashFragment.newInstance())
         }

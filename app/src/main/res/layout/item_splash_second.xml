@@ -6,82 +6,83 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/tvText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="The structure of the program is as follows:"
-        android:textSize="32sp"
+        android:text="@string/second_splash_title"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgFirstStep"
         android:layout_width="128dp"
         android:layout_height="128dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_workout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/tvText" />
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvFirstStep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Work out hard for 20 seconds"
+        android:text="@string/second_splash_first_step"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imgFirstStep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/imgFirstStep"
+        app:layout_constraintTop_toTopOf="@+id/imgFirstStep" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgSecondStep"
         android:layout_width="104dp"
         android:layout_height="104dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_rest"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imgFirstStep"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFirstStep" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvSecondStep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Rest for 10 seconds"
+        android:text="@string/second_splash_second_step"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSecondStep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintStart_toEndOf="@+id/imgFirstStep"
+        app:layout_constraintTop_toTopOf="@+id/imgSecondStep" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvThirdStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="8"
         android:textSize="72dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="@+id/imgSecondStep"
+        app:layout_constraintStart_toStartOf="@+id/imgSecondStep"
+        app:layout_constraintTop_toBottomOf="@+id/imgSecondStep" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvFinal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Complete 8 rounds"
+        android:text="@string/second_splash_third_step"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/tvThirdStep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/tvSecondStep"
+        app:layout_constraintTop_toTopOf="@+id/tvThirdStep" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
