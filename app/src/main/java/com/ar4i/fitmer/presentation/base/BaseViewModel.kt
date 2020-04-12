@@ -1,10 +1,10 @@
 package com.ar4i.fitmer.presentation.base
 
 import android.app.Application
+import android.content.Context
 import androidx.annotation.StringRes
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import kotlinx.coroutines.Job
 
 abstract class BaseViewModel(application: Application) : AndroidViewModel(application) {
     protected fun <T> EventLiveData() = MutableLiveData<Event<T>>()
@@ -12,4 +12,6 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     protected fun getString(@StringRes stringResId: Int): String {
         return getApplication<Application>().resources.getString(stringResId)
     }
+
+    protected fun getContext(): Context = getApplication<Application>()
 }

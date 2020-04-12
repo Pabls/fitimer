@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.RelativeLayout">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        tools:text="Preparation" />
+
+    <ImageView
+        android:id="@+id/imgMinus"
+        android:layout_width="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="@color/colorOnBar"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@+id/tvTime"
+        android:src="@drawable/ic_minus" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@+id/imgPlus"
+        android:gravity="center"
+        android:textSize="18sp"
+        tools:text="00:10" />
+
+    <ImageView
+        android:id="@+id/imgPlus"
+        android:layout_width="24dp"
+        android:layout_height="match_parent"
+        android:tint="@color/colorOnBar"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_plus" />
+
+</merge>

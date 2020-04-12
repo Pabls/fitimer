@@ -34,7 +34,10 @@ object ViewModelsFactory : ViewModelProvider.Factory {
             GraphsViewModel::class.java -> GraphsViewModel(app)
             TimerViewModel::class.java -> TimerViewModel(app)
             SettingsViewModel::class.java -> SettingsViewModel(app)
-            TabataViewModel::class.java -> TabataViewModel(app)
+            TabataViewModel::class.java -> TabataViewModel(
+                interactorsModule.provideSoundsInteractor(),
+                app
+            )
             IntervalsViewModel::class.java -> IntervalsViewModel(app)
             else -> EmptyViewModel(app)
         } as T

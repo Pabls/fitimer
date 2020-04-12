@@ -24,13 +24,26 @@
     <string name="first_splash_title">What is Tabata?</string>
     <string name="first_splash_text">Tabata training is a high-intensity interval training (HIIT) workout, 
         featuring exercises that last four minutes</string>
-    
+
     <string name="second_splash_title">The structure of\n the program is as follows:</string>
     <string name="second_splash_first_step">Work out hard for 20 seconds</string>
     <string name="second_splash_second_step">Rest for 10 seconds</string>
     <string name="second_splash_third_step">Complete 8 rounds</string>
-    
+
     <string name="third_splash_first_advice">Combine exercises</string>
     <string name="third_splash_second_advice">Exercise regularly</string>
     <string name="third_splash_third_advice">And enjoy the result</string>
+
+    <string name="tabata_fragment_start">Start</string>
+    <string name="tabata_fragment_title">Training time :</string>
+    <string name="tabata_fragment_default_full_time">04:10</string>
+    <string name="tabata_fragment_preparation">Preparation</string>
+    <string name="tabata_fragment_work">Work</string>
+    <string name="tabata_fragment_rest">Rest</string>
+    <string name="tabata_fragment_rounds">Rounds</string>
+    <string name="tabata_fragment_cycles">Cycles</string>
+
+    <string name="time_selector_half_time">0%d</string>
+    <string name="time_selector_full_time">%s:%s:%s</string>
+    <string name="time_selector_full_minutes_time">%s:%s</string>
 </resources>
