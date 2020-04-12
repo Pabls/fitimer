@@ -26,7 +26,10 @@ object ViewModelsFactory : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when (modelClass) {
-            SplashViewModel::class.java -> SplashViewModel(app)
+            SplashViewModel::class.java -> SplashViewModel(
+                interactorsModule.provideSettingsIteractor(),
+                app
+            )
             WorkoutsViewModel::class.java -> WorkoutsViewModel(app)
             GraphsViewModel::class.java -> GraphsViewModel(app)
             TimerViewModel::class.java -> TimerViewModel(app)

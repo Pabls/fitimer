@@ -37,6 +37,7 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
         vIndicator = view.findViewById(R.id.vIndicator)
         imgClose = view.findViewById(R.id.imgClose)
         btnNext = view.findViewById(R.id.btnNext)
+        showView(false)
 
         imgClose?.setOnClickListener { vm.closeIconClick() }
         btnNext?.setOnClickListener { vm.nextButtonClick(getCurrentPageIndex()) }
@@ -49,17 +50,21 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
             it.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(rv: RecyclerView, ns: Int) {
                     val currentPageIndex = getCurrentPageIndex()
-                    if(currentPageIndex >= 0) {
+                    if (currentPageIndex >= 0) {
                         setActiveIndicator(currentPageIndex)
                         vm.scroll(currentPageIndex)
                     }
                 }
             })
         }
+
     }
 
     override fun initObservers() {
-        vm.pages.observe(viewLifecycleOwner, Observer { splashAdapter.updateAdapter(it) })
+        vm.pages.observe(viewLifecycleOwner, Observer {
+            showView(true)
+            splashAdapter.updateAdapter(it)
+        })
         vm.buttonText.observe(viewLifecycleOwner, Observer { btnNext?.text = it })
         vm.pagePosition.observe(viewLifecycleOwner, Observer {
             rvSplash?.smoothScrollToPosition(it)
@@ -71,6 +76,14 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
     override fun showToolbar() = false
 
     override fun showBottomBar() = false
+
+    private fun showView(show: Boolean) {
+        val visibility = if (show) View.VISIBLE else View.GONE
+        rvSplash?.visibility = visibility
+        vIndicator?.visibility = visibility
+        imgClose?.visibility = visibility
+        btnNext?.visibility = visibility
+    }
 
     private fun getCurrentPageIndex() = manager?.findFirstCompletelyVisibleItemPosition() ?: 0
 
