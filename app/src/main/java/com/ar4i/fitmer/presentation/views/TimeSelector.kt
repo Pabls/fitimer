@@ -21,6 +21,9 @@ class TimeSelector : RelativeLayout {
     private var currentType = Type.Counter
     private var currentValue = 0
 
+    private val DEFAULT_ATTRS_VALUE = 0
+    private val TIME_DIFF = 5
+
     init {
         LinearLayout.inflate(context, R.layout.view_time_selector, this)
         tvTitle = findViewById(R.id.tvTitle)
@@ -34,7 +37,12 @@ class TimeSelector : RelativeLayout {
 
     constructor(context: Context, attributeSet: AttributeSet?) : super(context, attributeSet) {
         attributeSet?.let {
-            context.theme.obtainStyledAttributes(it, R.styleable.TimeSelector, 0, 0)?.let { array ->
+            context.theme.obtainStyledAttributes(
+                it,
+                R.styleable.TimeSelector,
+                DEFAULT_ATTRS_VALUE,
+                DEFAULT_ATTRS_VALUE
+            )?.let { array ->
                 try {
                     tvTitle.text = array.getString(R.styleable.TimeSelector_ts_title)
                 } finally {
@@ -57,13 +65,13 @@ class TimeSelector : RelativeLayout {
                 else -> currentValue
             }
         } else {
-            if (isPlus) currentValue + 5 else currentValue - 5
+            if (isPlus) currentValue + TIME_DIFF else currentValue - TIME_DIFF
         }
         changeCurrentValue(newValue)
     }
 
     private fun changeCurrentValue(value: Int) {
-        currentValue = if (value >= 0) value else 0
+        currentValue = if (value >= DEFAULT_ATTRS_VALUE) value else DEFAULT_ATTRS_VALUE
         tvTime.text = if (currentType == Type.Counter) {
             counterChangeListener?.invoke(currentValue)
             currentValue.toString()
